@@ -1,0 +1,32 @@
+service: serverless-node
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-northeast-2
+  timeout: 20
+
+package:
+  individually: true
+
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+  hello2:
+    handler: handler.hello2
+    events:
+      - httpApi:
+          path: /v2
+          method: get
+  world:
+    handler: handler.world
+    events:
+      - httpApi:
+          path: /
+          method: post
