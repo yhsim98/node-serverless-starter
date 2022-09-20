@@ -5,6 +5,7 @@ provider:
   name: aws
   runtime: nodejs14.x
   region: ap-northeast-2
+  stage: ${opt:stage, 'dev'}
   timeout: 20
 
 package:
